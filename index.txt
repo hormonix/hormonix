@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hormonix personalized nutrition and lifestyle consultation. Individual consultation at ₹99.">
+  <title>Hormonix | Nutrition & Lifestyle Consultation ₹99</title>
+  <style>
+    :root{
+      --green:#3f8f22; --green2:#6fbd2e; --navy:#09263c; --cream:#f7faf4;
+      --text:#17212b; --muted:#5d6871; --white:#fff; --gold:#f6c62e;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--cream);line-height:1.55}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{background:#fff;border-bottom:1px solid #e8eee5;position:sticky;top:0;z-index:20}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--navy);font-size:21px}
+    .brand-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#e8f7d9,#fff);border:2px solid var(--green);font-size:22px}
+    .navlinks{display:flex;gap:24px;font-weight:700;color:#3e4a52;font-size:14px}
+    .navcta{background:var(--green);color:#fff;padding:11px 18px;border-radius:999px;font-weight:800}
+    .hero{padding:58px 0 42px;background:radial-gradient(circle at 90% 10%,#e2f3d3 0,transparent 35%),linear-gradient(180deg,#fff,#f4faef)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;background:#e9f7df;color:#276b16;border:1px solid #cce8b9;padding:7px 12px;border-radius:999px;font-size:13px;font-weight:900}
+    h1{font-size:clamp(42px,6vw,72px);line-height:.98;margin:18px 0 20px;letter-spacing:-2.8px;color:var(--navy)}
+    h1 span{color:var(--green)}
+    .hero p{font-size:19px;color:var(--muted);max-width:650px}
+    .price-row{display:flex;align-items:center;gap:16px;margin:26px 0}
+    .price{font-size:52px;font-weight:950;color:var(--green);line-height:1}
+    .price small{font-size:16px;color:var(--muted);font-weight:700}
+    .primary{display:inline-flex;align-items:center;justify-content:center;background:var(--green);color:#fff;border:0;padding:15px 24px;border-radius:12px;font-size:16px;font-weight:900;box-shadow:0 10px 24px rgba(63,143,34,.22)}
+    .secondary{display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--navy);padding:13px 22px;border-radius:12px;font-weight:900;margin-left:10px}
+    .trust{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px;color:#3d4a42;font-size:13px;font-weight:750}
+    .trust span{background:#fff;border:1px solid #e2eadf;padding:8px 11px;border-radius:999px}
+    .poster{background:#fff;padding:10px;border-radius:24px;box-shadow:0 22px 55px rgba(9,38,60,.14);border:1px solid #e4ece0}
+    .poster img{display:block;width:100%;border-radius:17px}
+    section{padding:68px 0}
+    .section-title{text-align:center;max-width:760px;margin:0 auto 38px}
+    .section-title h2{font-size:38px;line-height:1.05;color:var(--navy);margin:0 0 10px}
+    .section-title p{color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{background:#fff;border:1px solid #e4ebe1;border-radius:18px;padding:24px;box-shadow:0 8px 25px rgba(20,50,30,.05)}
+    .icon{width:48px;height:48px;border-radius:14px;background:#ecf8e6;display:grid;place-items:center;font-size:24px;margin-bottom:15px}
+    .card h3{margin:0 0 7px;color:var(--navy);font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .dark{background:var(--navy);color:#fff}
+    .dark .section-title h2,.dark .section-title p{color:#fff}
+    .dark .section-title p{opacity:.78}
+    .conditions{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .condition{padding:20px 12px;text-align:center;border:1px solid rgba(255,255,255,.16);border-radius:16px;background:rgba(255,255,255,.06)}
+    .condition strong{display:block;color:#c8ef72;margin-top:8px}
+    .offer{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
+    .offer-box{background:#fff;border-radius:24px;padding:34px;border:1px solid #e1e9dc}
+    .offer-box h2{font-size:34px;line-height:1.05;color:var(--navy);margin:0 0 15px}
+    .checklist{padding:0;margin:22px 0;list-style:none}
+    .checklist li{margin:10px 0;font-weight:700}
+    .checklist li::before{content:"✓";color:var(--green);font-weight:950;margin-right:9px}
+    .booking{background:linear-gradient(145deg,#0b2c43,#173f58);color:#fff;border-radius:24px;padding:34px}
+    .booking h2{font-size:34px;line-height:1.05;margin:0 0 8px}
+    form{display:grid;gap:12px;margin-top:22px}
+    input,select,textarea{width:100%;padding:14px 15px;border-radius:10px;border:1px solid #d5dfd1;font:inherit;background:#fff}
+    label{font-size:13px;font-weight:800;opacity:.9}
+    .booking label{color:#fff}
+    .form-note{font-size:12px;opacity:.72;margin:5px 0 0}
+    .faq{max-width:820px;margin:auto}
+    details{background:#fff;border:1px solid #e3eae0;border-radius:14px;padding:17px 19px;margin:10px 0}
+    summary{font-weight:850;color:var(--navy);cursor:pointer}
+    details p{color:var(--muted);margin:12px 0 0;font-size:14px}
+    footer{background:#071d2c;color:#fff;padding:38px 0 25px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+    footer h3{margin-top:0}
+    footer p,footer a{color:#b9c7cf;font-size:14px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:25px;padding-top:18px;font-size:12px;color:#8fa0aa}
+    .float{position:fixed;right:18px;bottom:18px;z-index:30;background:#1faa45;color:#fff;border-radius:999px;padding:14px 19px;font-weight:950;box-shadow:0 12px 30px rgba(0,0,0,.22)}
+    @media(max-width:900px){
+      .hero-grid,.offer{grid-template-columns:1fr}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .conditions{grid-template-columns:repeat(2,1fr)}
+      .navlinks{display:none}
+      h1{letter-spacing:-1.8px}
+    }
+    @media(max-width:560px){
+      .nav{height:64px}.navcta{padding:9px 13px;font-size:13px}
+      .hero{padding-top:35px}.hero p{font-size:17px}
+      .secondary{margin:10px 0 0;width:100%}.primary{width:100%}
+      .price-row{display:block}.price{margin-bottom:12px}
+      .cards{grid-template-columns:1fr}
+      .conditions{grid-template-columns:1fr 1fr}
+      .section-title h2{font-size:31px}
+      .footer-grid{grid-template-columns:1fr}
+      .float{left:14px;right:14px;text-align:center}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top"><span class="brand-mark">🌿</span> HORMONIX</a>
+    <nav class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#support">Health Support</a>
+      <a href="#booking">Consultation</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="navcta" href="#booking">Book ₹99</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">🌿 Nutrition • Lifestyle • Wellness</div>
+      <h1>Take control of your health with <span>personalized guidance.</span></h1>
+      <p>Get one-to-one nutrition and lifestyle guidance from an experienced dietician and health advisor — designed around your goals, routine and food preferences.</p>
+      <div class="price-row">
+        <div class="price">₹99 <small>individual consultation</small></div>
+      </div>
+      <a class="primary" href="#booking">Book Your Appointment</a>
+      <a class="secondary" href="#services">See What We Provide</a>
+      <div class="trust">
+        <span>✓ Personalized guidance</span>
+        <span>✓ Daily support options</span>
+        <span>✓ Practical food habits</span>
+      </div>
+    </div>
+    <div class="poster">
+      <img src="assets/hormonix-ad-poster.png" alt="Hormonix nutrition and lifestyle consultation advertisement">
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>Guidance that fits real life</h2>
+      <p>Simple, practical support to help you build sustainable nutrition and lifestyle habits.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="icon">🥗</div><h3>Personalized Diet Guidance</h3><p>Meal guidance tailored to your goals, routine and preferences.</p></div>
+      <div class="card"><div class="icon">📲</div><h3>Follow-up & Support</h3><p>Stay consistent with accountability, check-ins and practical guidance.</p></div>
+      <div class="card"><div class="icon">🌱</div><h3>Lifestyle & Habit Guidance</h3><p>Build realistic daily habits around food, activity, sleep and routine.</p></div>
+      <div class="card"><div class="icon">👩‍⚕️</div><h3>Expert Guidance</h3><p>One-to-one support from an experienced dietician and health advisor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="support" class="dark">
+  <div class="container">
+    <div class="section-title">
+      <h2>Health goals we support</h2>
+      <p>Nutrition and lifestyle guidance can complement your existing healthcare plan.</p>
+    </div>
+    <div class="conditions">
+      <div class="condition">🩸<strong>Blood Sugar</strong><small>Nutrition support</small></div>
+      <div class="condition">❤️<strong>Blood Pressure</strong><small>Healthy habits</small></div>
+      <div class="condition">🫀<strong>Cholesterol</strong><small>Food guidance</small></div>
+      <div class="condition">⚖️<strong>Healthy Weight Loss</strong><small>Sustainable goals</small></div>
+      <div class="condition">💪<strong>Healthy Weight Gain</strong><small>Balanced nutrition</small></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container offer">
+    <div class="offer-box">
+      <h2>Start with a ₹99 individual consultation</h2>
+      <p>Use your first consultation to discuss your goals and understand the kind of nutrition and lifestyle support that may be suitable for you.</p>
+      <ul class="checklist">
+        <li>One-to-one consultation</li>
+        <li>Personalized nutrition discussion</li>
+        <li>Lifestyle & habit guidance</li>
+        <li>Practical next steps</li>
+        <li>Follow-up options explained</li>
+      </ul>
+      <a class="primary" href="#booking">Book ₹99 Consultation</a>
+    </div>
+
+    <div class="booking" id="booking">
+      <h2>Book your appointment</h2>
+      <p>Fill in your details. We'll prepare a WhatsApp message for you to confirm your appointment.</p>
+      <form id="bookingForm">
+        <div><label for="name">Name</label><input id="name" required placeholder="Your name"></div>
+        <div><label for="phone">Phone / WhatsApp</label><input id="phone" required inputmode="tel" placeholder="Your phone number"></div>
+        <div><label for="goal">What would you like guidance for?</label>
+          <select id="goal" required>
+            <option value="">Select one</option>
+            <option>Blood-sugar management</option>
+            <option>Blood-pressure friendly nutrition</option>
+            <option>Cholesterol-focused nutrition</option>
+            <option>Healthy weight loss</option>
+            <option>Healthy weight gain</option>
+            <option>General nutrition & lifestyle</option>
+          </select>
+        </div>
+        <button class="primary" type="submit">Continue on WhatsApp</button>
+        <p class="form-note">Your information is used only to respond to your appointment request.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-title"><h2>Frequently asked questions</h2><p>Clear information before you book.</p></div>
+    <div class="faq">
+      <details><summary>What is included in the ₹99 consultation?</summary><p>It is an individual consultation focused on understanding your goals and providing personalized nutrition and lifestyle guidance.</p></details>
+      <details><summary>Is this a replacement for my doctor or medication?</summary><p>No. Hormonix provides nutrition and lifestyle guidance. Do not stop, change or replace prescribed medicines or medical treatment without advice from your qualified healthcare professional.</p></details>
+      <details><summary>Can I get guidance for diabetes, BP or cholesterol?</summary><p>We offer nutrition and lifestyle support around these health goals. Your individual recommendations should be based on your circumstances and existing medical care.</p></details>
+      <details><summary>How do I book?</summary><p>Complete the form above and continue to WhatsApp, or call/WhatsApp Hormonix at the number shown on this page.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><h3>🌿 HORMONIX</h3><p>Nutrition • Lifestyle • Wellness</p><p>Your health. Your future. Our priority.</p></div>
+    <div><h3>Contact</h3><p>Call / WhatsApp: <strong>9944303266</strong></p><p>Instagram: @hormonix_official</p></div>
+    <div><h3>Important</h3><p>Information on this website is for general educational and wellness guidance and is not a substitute for diagnosis or medical treatment.</p></div>
+  </div>
+  <div class="container footer-bottom">© 2026 Hormonix. All rights reserved. • Privacy & responsible-use information should be reviewed and updated for your business before launch.</div>
+</footer>
+
+<a class="float" href="#booking">📲 Book ₹99 Consultation</a>
+
+<script>
+  /*
+    IMPORTANT:
+    Hormonix WhatsApp number: 9944303266.
+    WhatsApp uses international format below (91 + the 10-digit number).
+  */
+  const WHATSAPP_NUMBER = "919944303266";
+
+  document.getElementById("bookingForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const goal = document.getElementById("goal").value;
+    const msg = `Hi Hormonix 👋%0A%0AI would like to book the ₹99 individual consultation.%0A%0AName: ${encodeURIComponent(name)}%0AMy phone: ${encodeURIComponent(phone)}%0AGuidance for: ${encodeURIComponent(goal)}%0A%0APlease share the available appointment timings.`;
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
+  });
+</script>
+</body>
+</html>
